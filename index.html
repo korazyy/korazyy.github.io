@@ -1,0 +1,174 @@
+<title>Kora AI 视频作品集</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: 场记板式作品清单——每条片子一行：左边播放器，右边场记信息（时长/比例/分辨率）+ 做法 */
+:root{
+  --bg:#f3f2ef; --panel:#ffffff; --fg:#1d1f24; --muted:#62656d; --line:#dcdad4;
+  --accent:#d9561f; --accent-ink:#ffffff; --chip:#ece9e2;
+  --display:"Noto Serif SC","Songti SC",serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#16181d; --panel:#1f222a; --fg:#ecebe7; --muted:#a3a6ae; --line:#30343d;
+  --accent:#f0773f; --accent-ink:#16181d; --chip:#2a2e37; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16181d; --panel:#1f222a; --fg:#ecebe7; --muted:#a3a6ae; --line:#30343d;
+  --accent:#f0773f; --accent-ink:#16181d; --chip:#2a2e37; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.7}
+.wrap{max-width:1080px;margin:0 auto;padding-block:48px 72px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:14px;padding-bottom:32px;border-bottom:2px solid var(--fg)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,6vw,56px);line-height:1.15;margin:0;text-wrap:balance}
+.lede{max-width:40em;color:var(--muted);margin:0;font-size:16px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.skills span{background:var(--chip);border-radius:4px;padding:3px 10px;font-size:13px}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin-top:8px;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.stats b{display:block;font-size:22px;color:var(--fg);font-weight:600}
+.works{display:grid;gap:0}
+.work{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:32px;padding-block:40px;border-bottom:1px solid var(--line);align-items:start}
+.player{background:#000;border-radius:6px;overflow:hidden;line-height:0}
+.player video{width:100%;max-width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#000}
+.info{display:grid;gap:12px;min-width:0}
+.slate{display:flex;flex-wrap:wrap;gap:6px 14px;font-family:var(--mono);font-size:12px;color:var(--muted);border-top:3px solid var(--fg);padding-top:10px}
+.slate .no{color:var(--accent);font-weight:600}
+h2{font-family:var(--display);font-weight:700;font-size:24px;line-height:1.3;margin:0;text-wrap:balance}
+.info p{margin:0;color:var(--fg)}
+.how{margin:0;padding-left:1.2em;color:var(--muted);font-size:14px}
+.how li{margin:2px 0}
+.tools{display:flex;flex-wrap:wrap;gap:6px}
+.tools span{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:1px 8px;color:var(--muted)}
+.role{font-size:13px;font-weight:500}
+.role em{font-style:normal;background:var(--accent);color:var(--accent-ink);padding:1px 8px;border-radius:3px;margin-right:6px;font-size:12px}
+.pipeline{margin-top:48px;display:grid;gap:14px}
+.pipeline h3{font-family:var(--display);font-size:22px;margin:0}
+.pipeline p{margin:0;max-width:44em;color:var(--muted)}
+footer{margin-top:40px;font-size:13px;color:var(--muted)}
+@media (max-width:760px){.work{grid-template-columns:minmax(0,1fr);gap:18px;padding-block:28px}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">AIGC Video Portfolio · 2026</div>
+    <h1>Kora 的 AI 视频作品集</h1>
+    <p class="lede">我用 AI 工具独立完成从出图、生成视频、配音到剪辑合成的整条流程。下面 6 条片子都是我自己做的，每条写明了做法和用到的工具。也做过把中文片改成英文版。</p>
+    <div class="skills">
+      <span>图生视频 / 首尾帧控制</span><span>多模型对比出片</span><span>分镜与镜头节奏</span>
+      <span>AI 配音与配乐卡点</span><span>动效讲解动画</span><span>中译英本地化</span><span>批量化流水线</span>
+    </div>
+    <div class="stats">
+      <div><b>6</b>代表作</div>
+      <div><b>16:9</b>横屏 1080p 原片</div>
+      <div><b>每天</b>自动产出 AI 早报短片</div>
+    </div>
+  </header>
+
+  <section class="works">
+
+    <article class="work">
+      <div class="player"><video src="v/1.mp4" poster="v/1.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">01</span><span>00:27</span><span>16:9</span><span>1920×1080</span><span>广告片</span></div>
+        <h2>AI 机甲超跑广告</h2>
+        <p>一支概念超跑的产品广告，5 个镜头：侧身扫车、车身炸开再合上、雨夜、航拍、日出。</p>
+        <ul class="how">
+          <li>先用 AI 出图定首帧、尾帧和"爆炸图"，锁定车型和配色</li>
+          <li>用首尾帧控制生成每个镜头，同一镜头在几个模型间对比后挑最好的一版</li>
+          <li>炸开镜头做了正放、定格、倒放合上，再配合音效</li>
+          <li>剪辑成片，配乐卡点</li>
+        </ul>
+        <div class="tools"><span>ChatGPT 出图</span><span>可灵</span><span>海螺 Hailuo 02</span><span>豆包视频</span><span>LibTV</span></div>
+        <div class="role"><em>独立完成</em>美术设定 · 生成 · 剪辑</div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="player"><video src="v/2.mp4" poster="v/2.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">02</span><span>00:11</span><span>16:9</span><span>1280×720</span><span>创意短片</span></div>
+        <h2>敦煌飞天闯进电脑桌面</h2>
+        <p>国风飞天角色在电脑桌面上起舞，裙摆把桌面图标扫落一地。用一个反差场景做出记忆点。</p>
+        <ul class="how">
+          <li>设计角色形象和桌面场景</li>
+          <li>AI 生成角色动作，让人物和桌面图标产生互动</li>
+          <li>去水印、剪辑成片</li>
+        </ul>
+        <div class="tools"><span>AI 视频生成</span></div>
+        <div class="role"><em>独立完成</em>创意 · 生成 · 后期</div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="player"><video src="v/3.mp4" poster="v/3.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">03</span><span>00:30</span><span>16:9</span><span>1920×1080</span><span>拼贴动效讲解</span></div>
+        <h2>超跑广告的制作过程（剪纸拼贴版）</h2>
+        <p>把第 01 条广告的制作步骤，做成橙色牛皮纸剪报风格的定格动效讲解，主角是我的卡通形象。</p>
+        <ul class="how">
+          <li>参考小红书爆款的拼贴风格，拆解后重新设计</li>
+          <li>用代码逐帧生成拼贴动效，字幕和画面按配音时间对齐</li>
+          <li>AI 配音</li>
+        </ul>
+        <div class="tools"><span>Claude Code</span><span>代码动画</span><span>豆包配音</span></div>
+        <div class="role"><em>独立完成</em>文案 · 动效 · 配音</div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="player"><video src="v/4.mp4" poster="v/4.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">04</span><span>00:30</span><span>16:9</span><span>1920×1080</span><span>光效动画</span></div>
+        <h2>金线动画：每天进步一点点</h2>
+        <p>黑底金线、流光、金粉的数学讲解动画，讲 1.01 和 0.99 的 365 次方差多少。</p>
+        <ul class="how">
+          <li>自建渲染流程：金线描字、彗星线头、镜头推拉、切场金光</li>
+          <li>配乐由程序自动作曲，配音逐句生成后拼接</li>
+          <li>做成了可复用的模板，换文案就能出新片</li>
+        </ul>
+        <div class="tools"><span>Claude Code</span><span>程序化渲染</span><span>火山引擎配音</span></div>
+        <div class="role"><em>独立完成</em>风格设计 · 模板 · 成片</div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="player"><video src="v/5.mp4" poster="v/5.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">05</span><span>01:38</span><span>16:9</span><span>1920×1080</span><span>文章解读动画</span></div>
+        <h2>官方长文 → 讲解动画</h2>
+        <p>把 Anthropic 一篇官方技术文章改成不出镜的讲解动画，用卡片、流程图、对比表把概念讲清楚。</p>
+        <ul class="how">
+          <li>读原文、写口播稿，逐条对照原文核实</li>
+          <li>10 种场景模板（标题、卡片、流程、对比、大数字等），画面时长按配音自动对齐</li>
+          <li>AI 配音 + 硬字幕</li>
+        </ul>
+        <div class="tools"><span>Claude Code</span><span>动画模板</span><span>火山引擎配音</span></div>
+        <div class="role"><em>独立完成</em>稿子 · 画面 · 配音</div>
+      </div>
+    </article>
+
+    <article class="work">
+      <div class="player"><video src="v/6.mp4" poster="v/6.jpg" controls playsinline preload="metadata"></video></div>
+      <div class="info">
+        <div class="slate"><span class="no">06</span><span>01:09</span><span>16:9</span><span>1920×1080</span><span>英文本地化</span></div>
+        <h2>3D 打印小龙：中文片改英文版</h2>
+        <p>把一条中文视频完整改成英文版，面向海外平台发布。</p>
+        <ul class="how">
+          <li>翻译并改写成地道英文</li>
+          <li>英文配音、英文字幕和英文封面</li>
+        </ul>
+        <div class="tools"><span>AI 翻译</span><span>AI 配音</span><span>剪辑</span></div>
+        <div class="role"><em>独立完成</em>翻译 · 配音 · 成片</div>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="pipeline">
+    <div class="eyebrow">Workflow</div>
+    <h3>不只会做单条，也能批量稳定出片</h3>
+    <p>我把常用的视频做法搭成了自动化流程：每天早上 6 点自动选题、核实、生成 AI 早报短片和封面，并发到 5 个平台。接项目时可以按你的风格搭一套类似的流程，量大也能按时交付。</p>
+  </section>
+
+  <footer>作品均为本人制作 · 账号「Kora说AI，每天进步一点点」</footer>
+</div>
